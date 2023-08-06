@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map For 1eurofilter
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+OneEuroFilter	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+filter	KEYWORD2
+setFrequency  KEYWORD2
+setMinCutoff  KEYWORD2
+setBeta  KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DEFAULT_FREQUENCY   LITERAL1
+DEFAULT_MINCUTOFF   LITERAL1
+DEFAULT_BETA        LITERAL1
+DEFAULT_DCUTOFF     LITERAL1
