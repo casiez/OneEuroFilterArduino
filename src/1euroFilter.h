@@ -105,15 +105,40 @@ public:
   explicit OneEuroFilter(float freq = DEFAULT_FREQUENCY, 
 		float mincutoff=DEFAULT_MINCUTOFF, float beta_=DEFAULT_BETA, float dcutoff=DEFAULT_DCUTOFF) ;
 
+  /**
+   * @brief Creates the filter and set its parameters
+   * @param freq An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available.
+   * @param mincutoff Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter.
+   * @param beta_ Parameter to reduce latency (> 0).
+   * @param dcutoff Used to filter the derivates. 1 Hz by default. Change this parameter if you know what you are doing.
+   */
   void begin(float freq, 
 		float mincutoff=1.0, float beta_=0.0, float dcutoff=1.0) ;
 
+  /**
+   * @brief Sets the frequency of the signal
+   * @param f An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available.
+   */
   void setFrequency(float f) ;
 
+  /**
+   * @brief Sets the filter min cutoff frequency
+   * @param mc Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter.
+   */ 
   void setMinCutoff(float mc) ;
 
+  /**
+   * @brief Sets the Beta parameter
+   * @param b Parameter to reduce latency (> 0).
+   */ 
   void setBeta(float b) ;
 
+  /**
+   * @brief Filter the noisy signal
+   * @param value Noisy value to filter
+   * @param timestamp (optional) timestamp in seconds
+   * @return The filtered value
+   */
   float filter(float value, TimeStamp timestamp=UndefinedTime) ;
 
   ~OneEuroFilter(void) ;
